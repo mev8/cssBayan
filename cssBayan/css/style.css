@@ -1,0 +1,158 @@
+body {
+	background-color: #ffe4c4;
+	margin: 0;
+	font-size: 100%;
+	font-family: Arial, Helvetica, sans-serif;
+}
+
+.wrapper {
+	margin: 0 auto;
+	max-width: 19rem;
+}
+
+.title {
+	text-align: center;
+	color: #000000;
+	margin: 0.5rem 0;
+}
+
+.container {
+	max-width: 100%;
+}
+
+.item {
+	padding:0 0.5rem;
+}
+
+.item__input {
+	appearance: none;
+}
+
+.item__input:checked ~ .item__img {
+	max-width: 80%;
+	opacity: 1;
+	transform: scale(1);
+	transition: all 0.7s;
+}
+
+.item__input:checked ~ .item__title .item__text {
+	color: #000000;
+}
+
+.item__input:checked ~ .item__title .item__icon {
+	transform: rotate(45deg);
+}
+
+.item__input:checked ~ .item__title .item__icon .icon__col,
+.item__input:checked ~ .item__title .item__icon .icon__row {
+	background-color: #f00635;
+}
+
+.item__label {
+	display: flex;
+	flex-direction: column;
+	border-top: 2px dotted gray;
+	padding: 1rem 0;
+}
+
+.item__title {
+	display: flex;
+	align-items: baseline;
+	justify-content: space-between;
+}
+
+.item__text {
+	font-weight: bold;
+	text-transform: uppercase;
+	color: #0000ff;
+}
+
+.item__icon {
+	width: 16px;
+	height: 16px;
+	transition: all 0.3s;
+}
+
+.icon__col {
+	width: 0.2rem;
+	height: 0.4rem;
+	margin: 0 auto;
+}
+
+.icon__row {
+	width: 1rem;
+	height: 0.2rem;
+}
+
+.icon__col,
+.icon__row {
+	background-color: #35e426;
+	transition: all 0.3s;
+}
+
+.item__img {
+	display: block;
+	margin: 0 auto;
+	max-width: 0;
+	opacity: 0;
+	transform: scale(0);
+	transition: all 0.3s;
+}
+
+@media only screen and (min-width:820px) {
+	body {
+		font-size: 130%;
+	}
+
+	.wrapper {
+		max-width: 45rem;
+	}
+
+	.item__icon {
+		display: none;
+	}
+
+	.container:hover {
+		cursor: pointer;
+	}
+
+	.container:hover .item__icon {
+		display: block;
+	}
+
+	.container:hover .item__label .item__text {
+		color: #000000;
+	}
+
+	.item__label:hover {
+		cursor: pointer;
+	}
+
+	.item__label:hover .item__icon {
+		transform: rotate(45deg);
+	}
+
+	.item__label:hover .item__icon .icon__col,
+	.item__label:hover .item__icon .icon__row {
+		background-color: #f00635;
+	}
+
+	.item__label:hover .item__img {
+		max-width: 80%;
+		opacity: 1;
+		transform: scale(1);
+		transition: all 0.7s;
+	}
+}
+
+@media only screen and (min-width:820px) and (hover: none) {
+	.item__icon {
+		display: block;
+	}
+}
+
+@media screen and (min-width:1920px) {
+	body {
+		font-size: 160%;
+	}
+}
